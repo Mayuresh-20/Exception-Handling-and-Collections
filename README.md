@@ -57,6 +57,7 @@ public class ExceptionHandling {
         }
     }
 }
+
 Output:►
 
 java.io.FileNotFoundException: Negative Integer -5
@@ -75,7 +76,9 @@ As stated earlier, when an exception is raised an exception object is getting cr
 ►Checked Exceptions: Checked Exceptions are exceptional scenarios that we can anticipate in a program and try to recover from it. For example, FileNotFoundException. We should catch this exception and provide a useful message to the user and log it properly for debugging purposes. The Exception is the parent class of all Checked Exceptions. If we are throwing a checked exception, we must catch it in the same method or we have to propagate it to the caller using the throws keyword.
 
 ►Runtime Exception: Runtime Exceptions are caused by bad programming. For example, trying to retrieve an element from the Array. We should check the length of the array first before trying to retrieve the element otherwise it might throw ArrayIndexOutOfBoundException at runtime. RuntimeException is the parent class of all runtime exceptions. If we are throwing any runtime exception in a method, it’s not required to specify them in the method signature throws clause. Runtime exceptions can be avoided with better programming.
+
 ![image](https://user-images.githubusercontent.com/91977965/136163088-a783c8f5-9000-4fa2-8a79-e2f4fc9054bc.png)
+
 ►If you are catching a lot of exceptions in a single try block, you will notice that the catch block code looks very ugly and mostly consists of redundant code to log the error. Java 7 one of the feature was improved catch block where we can catch multiple exceptions in a single catch block. The catch block with this feature looks like below:
 
 catch(IOException | SQLException ex){
